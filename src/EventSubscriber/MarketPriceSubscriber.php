@@ -9,7 +9,6 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 class MarketPriceSubscriber implements EventSubscriberInterface
 {
-
     /**
      * @var MailerService
      */
@@ -76,7 +75,7 @@ class MarketPriceSubscriber implements EventSubscriberInterface
     {
         return sprintf(
             '%s %s',
-            $price->getPrice() / (int)'1' . str_repeat(0, $price->getDecimals()),
+            $price->getPrice() / (int) '1'.str_repeat(0, $price->getDecimals()),
             $price->getCurrency()
         );
     }

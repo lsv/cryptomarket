@@ -75,10 +75,10 @@ class MarketPrice
     private $parser;
 
     /**
-     * @param string $type
-     * @param int $price
-     * @param string $currency
-     * @param int|null $decimals
+     * @param string      $type
+     * @param int         $price
+     * @param string      $currency
+     * @param int|null    $decimals
      * @param string|null $parser
      */
     public function __construct(string $type = null, int $price = null, string $currency = null, int $decimals = null, string $parser = null)
@@ -112,9 +112,10 @@ class MarketPrice
      *
      * @return MarketPrice
      */
-    public function setType($type): MarketPrice
+    public function setType($type): self
     {
         $this->type = $type;
+
         return $this;
     }
 
@@ -131,9 +132,10 @@ class MarketPrice
      *
      * @return MarketPrice
      */
-    public function setPrice($price): MarketPrice
+    public function setPrice($price): self
     {
         $this->price = $price;
+
         return $this;
     }
 
@@ -150,9 +152,10 @@ class MarketPrice
      *
      * @return MarketPrice
      */
-    public function setCurrency($currency): MarketPrice
+    public function setCurrency($currency): self
     {
         $this->currency = $currency;
+
         return $this;
     }
 
@@ -169,9 +172,10 @@ class MarketPrice
      *
      * @return MarketPrice
      */
-    public function setDecimals(int $decimals): MarketPrice
+    public function setDecimals(int $decimals): self
     {
         $this->decimals = $decimals;
+
         return $this;
     }
 
@@ -188,9 +192,10 @@ class MarketPrice
      *
      * @return MarketPrice
      */
-    public function setDate($date): MarketPrice
+    public function setDate($date): self
     {
         $this->date = $date;
+
         return $this;
     }
 
@@ -207,18 +212,19 @@ class MarketPrice
      *
      * @return MarketPrice
      */
-    public function setTriggered(int $triggered): MarketPrice
+    public function setTriggered(int $triggered): self
     {
         $this->triggered = $triggered;
+
         return $this;
     }
 
     /**
      * @return MarketPrice
      */
-    public function addTrigger(): MarketPrice
+    public function addTrigger(): self
     {
-        $this->triggered++;
+        ++$this->triggered;
 
         return $this;
     }
@@ -236,10 +242,10 @@ class MarketPrice
      *
      * @return MarketPrice
      */
-    public function setParser(string $parser): MarketPrice
+    public function setParser(string $parser): self
     {
         $this->parser = $parser;
+
         return $this;
     }
-
 }

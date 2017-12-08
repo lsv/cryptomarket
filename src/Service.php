@@ -11,7 +11,6 @@ use Symfony\Component\Intl\Intl;
 
 class Service
 {
-
     /**
      * @var ParserService
      */
@@ -28,8 +27,8 @@ class Service
     private $trigger;
 
     /**
-     * @param TriggerService $trigger
-     * @param ParserService $parser
+     * @param TriggerService  $trigger
+     * @param ParserService   $parser
      * @param ManagerRegistry $registry
      */
     public function __construct(TriggerService $trigger, ParserService $parser, ManagerRegistry $registry)
@@ -40,7 +39,7 @@ class Service
     }
 
     /**
-     * @param InputInterface $input
+     * @param InputInterface  $input
      * @param OutputInterface $output
      *
      * @throws \Symfony\Component\Console\Exception\InvalidArgumentException
@@ -50,7 +49,7 @@ class Service
      */
     public function run(InputInterface $input, OutputInterface $output): void
     {
-        if (! $em = $this->registry->getManagerForClass(MarketPrice::class)) {
+        if (!$em = $this->registry->getManagerForClass(MarketPrice::class)) {
             $output->writeln('Could not connect to manager');
         }
 
@@ -68,6 +67,7 @@ class Service
 
     /**
      * @param InputInterface $input
+     *
      * @return bool
      *
      * @throws \Symfony\Component\Console\Exception\InvalidArgumentException
@@ -79,7 +79,7 @@ class Service
         $triggers = $this->registry->getRepository(Triggers::class)
             ->getNumberOfTriggersLastHour($input->getArgument('coin'), $input->getArgument('parser'))
         ;
+
         return $triggers <= $input->getOption('maxtriggers');
     }
-
 }

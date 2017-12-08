@@ -12,7 +12,6 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class DifferenceTrigger implements TriggerInterface
 {
-
     /**
      * @var ManagerRegistry
      */
@@ -39,9 +38,9 @@ class DifferenceTrigger implements TriggerInterface
     }
 
     /**
-     * @param InputInterface $input
+     * @param InputInterface  $input
      * @param OutputInterface $output
-     * @param MarketPrice $marketPrice
+     * @param MarketPrice     $marketPrice
      *
      * @return array|null
      *
@@ -59,13 +58,13 @@ class DifferenceTrigger implements TriggerInterface
                 $event = null;
                 if ($marketPrice->getPrice() >= $diff) {
                     return [
-                        'difference' => $marketPrice->getPrice() - $diff
+                        'difference' => $marketPrice->getPrice() - $diff,
                     ];
                 }
 
                 if ($marketPrice->getPrice() <= $diff) {
                     return [
-                        'difference' => $diff - $marketPrice->getPrice()
+                        'difference' => $diff - $marketPrice->getPrice(),
                     ];
                 }
             }
@@ -75,7 +74,7 @@ class DifferenceTrigger implements TriggerInterface
     }
 
     /**
-     * The event name to send
+     * The event name to send.
      *
      * @return string
      */

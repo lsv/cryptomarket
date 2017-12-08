@@ -10,7 +10,6 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class FetchMarketType extends AbstractType
 {
-
     /**
      * @var FetchMarketpriceCommand
      */
@@ -39,7 +38,6 @@ class FetchMarketType extends AbstractType
                 'data' => $option->getDefault(),
             ]);
         }
-
     }
 
     public function configureOptions(OptionsResolver $resolver): void

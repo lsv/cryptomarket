@@ -9,9 +9,8 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 interface TriggerInterface
 {
-
     /**
-     * Add configuration to the command
+     * Add configuration to the command.
      *
      * @param Command $command
      */
@@ -19,21 +18,20 @@ interface TriggerInterface
 
     /**
      * The actual run command
-     * If a array is returned, an event will be dispatched
+     * If a array is returned, an event will be dispatched.
      *
-     * @param InputInterface $input
+     * @param InputInterface  $input
      * @param OutputInterface $output
-     * @param MarketPrice $marketPrice
+     * @param MarketPrice     $marketPrice
      *
      * @return null|array
      */
     public function run(InputInterface $input, OutputInterface $output, MarketPrice $marketPrice): ?array;
 
     /**
-     * The event name to send
+     * The event name to send.
      *
      * @return string
      */
     public static function getEventName(): string;
-
 }

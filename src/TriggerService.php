@@ -11,7 +11,6 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 class TriggerService
 {
-
     /**
      * @var TriggerInterface[]
      */
@@ -53,9 +52,9 @@ class TriggerService
     }
 
     /**
-     * @param InputInterface $input
+     * @param InputInterface  $input
      * @param OutputInterface $output
-     * @param MarketPrice $price
+     * @param MarketPrice     $price
      */
     public function run(InputInterface $input, OutputInterface $output, MarketPrice $price): void
     {
@@ -75,5 +74,4 @@ class TriggerService
             }
         }
     }
-
 }

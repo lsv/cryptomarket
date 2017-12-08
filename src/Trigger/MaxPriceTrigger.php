@@ -11,7 +11,6 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class MaxPriceTrigger implements TriggerInterface
 {
-
     /**
      * @param Command $command
      */
@@ -28,9 +27,10 @@ class MaxPriceTrigger implements TriggerInterface
     }
 
     /**
-     * @param InputInterface $input
+     * @param InputInterface  $input
      * @param OutputInterface $output
-     * @param MarketPrice $marketPrice
+     * @param MarketPrice     $marketPrice
+     *
      * @return array|null
      *
      * @throws \Symfony\Component\Console\Exception\InvalidArgumentException
@@ -49,7 +49,7 @@ class MaxPriceTrigger implements TriggerInterface
     }
 
     /**
-     * The event name to send
+     * The event name to send.
      *
      * @return string
      */

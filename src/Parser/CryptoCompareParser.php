@@ -8,17 +8,16 @@ use App\ParserInterface;
 
 class CryptoCompareParser implements ParserInterface
 {
-
     public const PARSER_NAME = 'cryptocompare';
 
     private static $market = 'https://min-api.cryptocompare.com/data/price?fsym=%coin%&tsyms=%currency%';
 
     /**
-     * Parse the input
+     * Parse the input.
      *
      * @param string $coin
      * @param string $currency
-     * @param int $currencyDecimals
+     * @param int    $currencyDecimals
      *
      * @return MarketPrice
      *
@@ -35,15 +34,16 @@ class CryptoCompareParser implements ParserInterface
         $json = json_decode(file_get_contents($url));
         if (isset($json->{$currency})) {
             $price = $json->{$currency};
-            $price *= (int)'1' . str_repeat(0, $currencyDecimals);
+            $price *= (int) '1'.str_repeat(0, $currencyDecimals);
+
             return new MarketPrice($coin, $price, $currency, $currencyDecimals, $this->getName());
         }
 
-        throw new ParserException('Currency "' . $currency . '" not supported');
+        throw new ParserException('Currency "'.$currency.'" not supported');
     }
 
     /**
-     * The name of the parser
+     * The name of the parser.
      *
      * @return string
      */

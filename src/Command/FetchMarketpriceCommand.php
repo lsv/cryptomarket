@@ -12,7 +12,6 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class FetchMarketpriceCommand extends Command
 {
-
     public static $defaultName = 'fetch:marketprice';
 
     /**
@@ -47,9 +46,6 @@ class FetchMarketpriceCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-
-
         $this->service->run($input, $output);
     }
-
 }

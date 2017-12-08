@@ -16,7 +16,7 @@ class MarketPriceRepository extends ServiceEntityRepository
     /**
      * @param string $coin
      * @param string $parser
-     * @param int $hour
+     * @param int    $hour
      *
      * @return array
      */
@@ -30,8 +30,9 @@ class MarketPriceRepository extends ServiceEntityRepository
             ->andWhere($qb->expr()->gte('market_price.parser', ':parser'))
         ;
         $qb->setParameter(':coin', $coin);
-        $qb->setParameter(':date', new \DateTime('-' . $hour . ' hour'));
+        $qb->setParameter(':date', new \DateTime('-'.$hour.' hour'));
         $qb->setParameter(':parser', $parser);
+
         return $qb->getQuery()->getArrayResult();
     }
 }

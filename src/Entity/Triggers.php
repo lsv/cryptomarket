@@ -77,9 +77,10 @@ class Triggers
      *
      * @return Triggers
      */
-    public function setCoin(string $coin): Triggers
+    public function setCoin(string $coin): self
     {
         $this->coin = $coin;
+
         return $this;
     }
 
@@ -96,9 +97,10 @@ class Triggers
      *
      * @return Triggers
      */
-    public function setParser(string $parser): Triggers
+    public function setParser(string $parser): self
     {
         $this->parser = $parser;
+
         return $this;
     }
 
@@ -115,10 +117,10 @@ class Triggers
      *
      * @return Triggers
      */
-    public function setDate(\DateTime $date): Triggers
+    public function setDate(\DateTime $date): self
     {
         $this->date = $date;
+
         return $this;
     }
-
 }

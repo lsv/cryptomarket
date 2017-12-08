@@ -16,7 +16,7 @@ class TriggersRepository extends ServiceEntityRepository
     /**
      * @param string $coin
      * @param string $market
-     * @param int $hours
+     * @param int    $hours
      *
      * @return int
      *
@@ -33,7 +33,7 @@ class TriggersRepository extends ServiceEntityRepository
             ->andWhere($qb->expr()->eq('triggers.parser', ':parser'))
         ;
         $qb->setParameter(':coin', $coin);
-        $qb->setParameter(':date', new \DateTime('-' . $hours . ' hour'));
+        $qb->setParameter(':date', new \DateTime('-'.$hours.' hour'));
         $qb->setParameter(':parser', $market);
 
         return (int) $qb->getQuery()->getSingleScalarResult();

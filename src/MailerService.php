@@ -31,10 +31,10 @@ class MailerService
 
     /**
      * @param \Swift_Mailer $mailer
-     * @param string $mailToAddress
-     * @param string $mailToName
-     * @param string $mailSenderAddress
-     * @param string $mailSenderName
+     * @param string        $mailToAddress
+     * @param string        $mailToName
+     * @param string        $mailSenderAddress
+     * @param string        $mailSenderName
      */
     public function __construct(\Swift_Mailer $mailer, $mailToAddress, $mailToName, $mailSenderAddress, $mailSenderName)
     {
@@ -45,11 +45,13 @@ class MailerService
         $this->mailSenderName = $mailSenderName;
     }
 
+    /**
+     * @param \Swift_Message $message
+     */
     public function send(\Swift_Message $message)
     {
         $message->setFrom($this->mailSenderAddress, $this->mailSenderName);
         $message->setTo($this->mailToAddress, $this->mailToName);
         $this->mailer->send($message);
     }
-
 }

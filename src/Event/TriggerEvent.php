@@ -8,7 +8,6 @@ use Symfony\Component\EventDispatcher\Event;
 
 class TriggerEvent extends Event
 {
-
     public const EVENT_NAME = 'app.trigger';
 
     /**
@@ -56,5 +55,4 @@ class TriggerEvent extends Event
     {
         return $this->output;
     }
-
 }

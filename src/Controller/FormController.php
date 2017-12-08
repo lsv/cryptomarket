@@ -19,9 +19,9 @@ class FormController extends Controller
     /**
      * @Route("/", name="form")
      *
-     * @param KernelInterface $kernel
+     * @param KernelInterface         $kernel
      * @param FetchMarketpriceCommand $command
-     * @param Request $request
+     * @param Request                 $request
      *
      * @return Response
      *
@@ -48,7 +48,7 @@ class FormController extends Controller
             foreach ($definitions->getOptions() as $option) {
                 $name = $option->getName();
                 if (!empty($data[$name])) {
-                    $input['--' . $name] = $data[$name];
+                    $input['--'.$name] = $data[$name];
                 }
             }
 
