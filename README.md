@@ -1,4 +1,4 @@
-# Crypto coin market
+# Crypto market
 
 ## Setup
 
